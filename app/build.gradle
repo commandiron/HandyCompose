@@ -58,4 +58,5 @@ dependencies {
     implementation "io.coil-kt:coil-compose:2.2.0"
 
     implementation project(':handy-compose')
+//    implementation "com.github.commandiron:HandyCompose:1.0"
 }
