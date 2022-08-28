@@ -1,4 +1,4 @@
-package com.commandiron.handy_compose
+package com.commandiron.handy_compose.core
 
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme

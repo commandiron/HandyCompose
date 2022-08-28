@@ -1,8 +1,7 @@
-package com.commandiron.handy_compose
+package com.commandiron.handy_compose.core
 
 import androidx.annotation.FloatRange
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -23,7 +22,7 @@ import androidx.compose.ui.unit.dp
 fun HandyCard(
     modifier: Modifier = Modifier,
     @FloatRange(from = 0.0, to = 1.0) shapeSizeMultiplier: Float = 0.1f,
-    @FloatRange(from = 0.0, to = 1.0) contentPaddingMultiplier: Float = 0.1f,
+    @FloatRange(from = 0.0, to = 1.0) contentPaddingMultiplier: Float = 0f,
     color: Color = MaterialTheme.colorScheme.primary,
     contentColor: Color = contentColorFor(color),
     tonalElevation: Dp = 0.dp,
@@ -53,7 +52,8 @@ fun HandyCard(
     ){
         BoxWithConstraints(
             modifier = Modifier
-                .clip(RoundedCornerShape(shapeSize))
+                .clip(RoundedCornerShape(shapeSize)),
+            contentAlignment = contentAlignment
         ){
             layoutMaxHeight.value = constraints.maxHeight
             Box(

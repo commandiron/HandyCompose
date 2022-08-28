@@ -5,11 +5,18 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColorScheme(
+    primary = AtomicTangerine,
+    onPrimary = Color.Black,
+    background = Background
 )
 
 private val LightColorPalette = lightColorScheme(
+    primary = AtomicTangerine,
+    onPrimary = Color.Black,
+    background = Background
 )
 
 @Composable
