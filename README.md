@@ -1,7 +1,5 @@
 # HandyCompose [![](https://jitpack.io/v/commandiron/HandyCompose.svg)](https://jitpack.io/#commandiron/HandyCompose)
 
-Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spinkit/) with additionals.
-
 ## How it looks
 
 ## Setup
