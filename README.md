@@ -1,7 +1,5 @@
 # HandyCompose [![](https://jitpack.io/v/commandiron/HandyCompose.svg)](https://jitpack.io/#commandiron/HandyCompose)
 
-Android Jetpack Compose implementation of [SpinKit](https://tobiasahlin.com/spinkit/) with additionals.
-
 ## How it looks
 
 ## Setup
@@ -23,7 +21,7 @@ dependencyResolutionManagement {
 3. Add dependency
 ```groovy
 dependencies {
-        implementation 'com.github.commandiron:HandyCompose:1.0.1'
+        implementation 'com.github.commandiron:HandyCompose:1.0.2'
 }
 ```
 
