@@ -15,13 +15,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun HandyRowCard(
     modifier: Modifier = Modifier,
-    @FloatRange(from = 0.0, to = 1.0) shapeSizeMultiplier: Float = 0.2f,
-    @FloatRange(from = 0.0, to = 1.0) contentPaddingMultiplier: Float = 0.1f,
+    @FloatRange(from = 0.0, to = 1.0) shapeSizeFraction: Float = 0.2f,
+    @FloatRange(from = 0.0, to = 1.0) contentPaddingFraction: Float = 0.1f,
+    border: BorderStroke? = null,
     color: Color = MaterialTheme.colorScheme.primary,
     contentColor: Color = contentColorFor(color),
-    tonalElevation: Dp = 0.dp,
-    shadowElevation: Dp = 0.dp,
-    border: BorderStroke? = null,
     @FloatRange(from = 0.0) startContentWeight: Float = 2f,
     startContent: (@Composable BoxScope.() -> Unit)? = null,
     @FloatRange(from = 0.0) centerContentWeight: Float = 5f,
@@ -31,13 +29,11 @@ fun HandyRowCard(
 ) {
     HandyCard(
         modifier = modifier,
-        shapeSizeMultiplier = shapeSizeMultiplier,
-        contentPaddingMultiplier = contentPaddingMultiplier,
+        shapeSizeFraction = shapeSizeFraction,
+        paddingFraction = contentPaddingFraction,
+        border = border,
         color = color,
         contentColor = contentColor,
-        tonalElevation = tonalElevation,
-        shadowElevation = shadowElevation,
-        border = border,
         contentAlignment = Alignment.Center,
     ) {
         Row {

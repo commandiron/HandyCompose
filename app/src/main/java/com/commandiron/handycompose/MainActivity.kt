@@ -3,6 +3,8 @@ package com.commandiron.handycompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -12,6 +14,7 @@ import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
@@ -32,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ){}
-                when (4) {
+                when (0) {
                     //CORE
                     0 -> {
                         Column {
@@ -46,7 +49,7 @@ class MainActivity : ComponentActivity() {
                                 ){
                                     items(12){
                                         HandyColumnCard(
-                                            modifier = Modifier.aspectRatio(1f)
+                                            modifier = Modifier.aspectRatio(1f).clickable {  }
                                         )
                                     }
                                 }
@@ -61,7 +64,7 @@ class MainActivity : ComponentActivity() {
                                         .fillMaxWidth()
                                         .height(
                                             64.dp + (32.dp * index)
-                                        )
+                                        ).clickable {  }
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                             }

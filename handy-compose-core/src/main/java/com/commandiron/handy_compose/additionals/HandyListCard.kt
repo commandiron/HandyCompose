@@ -22,7 +22,6 @@ import com.commandiron.handy_compose.core.HandyRowCard
 fun HandyListCard(
     modifier: Modifier = Modifier,
     color: Color = MaterialTheme.colorScheme.primary,
-    contentColor: Color = MaterialTheme.colorScheme.onPrimary,
     imageContent: @Composable BoxScope.() -> Unit,
     title: String? = null,
     subTitle: String? = null,
@@ -32,13 +31,11 @@ fun HandyListCard(
 ) {
     HandyRowCard(
         modifier = modifier,
-        shadowElevation = 4.dp,
         color = color,
-        contentColor = contentColor,
         startContent = {
             HandyCard(
                 modifier = Modifier.fillMaxSize(),
-                shapeSizeMultiplier = 0.2f
+                shapeSizeFraction = 0.2f
             ) {
                 imageContent()
             }
@@ -50,7 +47,7 @@ fun HandyListCard(
                     {
                         HandyCard(
                             modifier = Modifier.fillMaxSize(),
-                            contentPaddingMultiplier = 0f,
+                            paddingFraction = 0f,
                             contentAlignment = Alignment.Center
                         ) {
                             Text(
@@ -68,7 +65,7 @@ fun HandyListCard(
                     {
                         HandyCard(
                             modifier = Modifier.fillMaxSize(),
-                            contentPaddingMultiplier = 0f,
+                            paddingFraction = 0f,
                             contentAlignment = Alignment.Center
                         ) {
                             Text(

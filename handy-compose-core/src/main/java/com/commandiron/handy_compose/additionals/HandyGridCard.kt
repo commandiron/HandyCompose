@@ -21,7 +21,6 @@ import com.commandiron.handy_compose.core.HandyColumnCard
 fun HandyGridCard(
     modifier: Modifier = Modifier,
     color: Color = MaterialTheme.colorScheme.primary,
-    contentColor: Color = MaterialTheme.colorScheme.onPrimary,
     imageContent: @Composable BoxScope.() -> Unit,
     title: String? = null,
     topStartIcon: ImageVector? = null,
@@ -31,14 +30,12 @@ fun HandyGridCard(
 ) {
     HandyColumnCard(
         modifier = modifier,
-        shadowElevation = 4.dp,
         color = color,
-        contentColor = contentColor,
-        contentPaddingMultiplier = 0f,
+        paddingFraction = 0f,
         topContent= {
             HandyCard(
                 modifier = Modifier.fillMaxSize(),
-                shapeSizeMultiplier = 0f,
+                shapeSizeFraction = 0f,
             ) {
                 imageContent()
             }
@@ -46,8 +43,8 @@ fun HandyGridCard(
         bottomContent = {
             title?.let {
                 HandyCard(
-                    shapeSizeMultiplier = 0f,
-                    contentPaddingMultiplier = 0.1f,
+                    shapeSizeFraction = 0f,
+                    paddingFraction = 0.1f,
                 ) {
                     Text(
                         text = it,
@@ -62,7 +59,7 @@ fun HandyGridCard(
                 HandyCard(
                     modifier = Modifier.fillMaxSize(0.5f),
                     color = LocalContentColor.current.copy(alpha = 0f),
-                    contentPaddingMultiplier = 0.2f,
+                    paddingFraction = 0.2f,
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
@@ -79,7 +76,7 @@ fun HandyGridCard(
                 HandyCard(
                     modifier = Modifier.fillMaxSize(0.5f),
                     color = LocalContentColor.current.copy(alpha = 0f),
-                    contentPaddingMultiplier = 0.2f,
+                    paddingFraction = 0.2f,
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
