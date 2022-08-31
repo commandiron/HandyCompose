@@ -2,6 +2,7 @@ package com.commandiron.handy_compose.core
 
 import androidx.annotation.FloatRange
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.contentColorFor
@@ -27,7 +28,11 @@ fun HandyColumnCard(
     @FloatRange(from = 0.0) centerContentWeight: Float = 0f,
     centerContent: (@Composable BoxScope.() -> Unit)? = null,
     @FloatRange(from = 0.0) bottomContentWeight: Float = 1f,
-    bottomContent: (@Composable BoxScope.() -> Unit)? = null
+    bottomContent: (@Composable BoxScope.() -> Unit)? = null,
+    topStartContent: (@Composable BoxScope.() -> Unit)? = null,
+    topEndContent: (@Composable BoxScope.() -> Unit)? = null,
+    bottomStartContent: (@Composable BoxScope.() -> Unit)? = null,
+    bottomEndContent: (@Composable BoxScope.() -> Unit)? = null,
 ) {
     HandyCard(
         modifier = modifier,
@@ -77,6 +82,54 @@ fun HandyColumnCard(
                     ) {
                         it()
                     }
+                }
+            }
+        }
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            topStartContent?.let {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(0.5f)
+                        .align(Alignment.TopStart),
+                    contentAlignment = Alignment.TopStart
+                ) {
+                    it()
+                }
+            }
+            topEndContent?.let {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(0.5f)
+                        .align(Alignment.TopEnd),
+                    contentAlignment = Alignment.TopEnd
+                ) {
+                    it()
+                }
+            }
+            bottomStartContent?.let {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(0.5f)
+                        .align(Alignment.BottomStart),
+                    contentAlignment = Alignment.BottomStart
+                ) {
+                    it()
+                }
+            }
+            bottomEndContent?.let {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth(0.5f)
+                        .fillMaxHeight(0.5f)
+                        .align(Alignment.BottomEnd),
+                    contentAlignment = Alignment.BottomEnd
+                ) {
+                    it()
                 }
             }
         }

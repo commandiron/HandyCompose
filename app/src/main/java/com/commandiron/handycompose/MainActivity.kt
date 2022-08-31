@@ -17,6 +17,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.commandiron.handy_compose.additionals.HandyGridCard
 import com.commandiron.handy_compose.core.HandyColumnCard
 import com.commandiron.handy_compose.additionals.HandyListCard
 import com.commandiron.handy_compose.core.HandyRowCard
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ){}
-                when (3) {
+                when (4) {
                     //CORE
                     0 -> {
                         Column {
@@ -111,6 +112,37 @@ class MainActivity : ComponentActivity() {
                                     icon = Icons.Default.AddCircle
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
+                            }
+                        }
+                    }
+                    4 -> {
+                        Column {
+                            repeat(5){
+                                LazyHorizontalGrid(
+                                    rows = GridCells.Fixed(1),
+                                    modifier = Modifier.height(64.dp + (32.dp * it)),
+                                    contentPadding = PaddingValues(8.dp),
+                                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                ){
+                                    items(12){
+                                        HandyGridCard(
+                                            modifier = Modifier.aspectRatio(1f),
+                                            imageContent = {
+                                                AsyncImage(
+                                                    model = ImageRequest.Builder(LocalContext.current)
+                                                        .data(Strings.imageUrl)
+                                                        .crossfade(true)
+                                                        .build(),
+                                                    contentDescription = null,
+                                                    contentScale = ContentScale.Crop
+                                                )
+                                            },
+                                            title = Strings.someTextSmall,
+                                            topEndIcon = Icons.Default.AddCircle
+                                        )
+                                    }
+                                }
                             }
                         }
                     }

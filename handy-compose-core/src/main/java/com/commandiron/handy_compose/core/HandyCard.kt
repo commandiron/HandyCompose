@@ -2,6 +2,7 @@ package com.commandiron.handy_compose.core
 
 import androidx.annotation.FloatRange
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
