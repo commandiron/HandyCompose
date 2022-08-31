@@ -20,6 +20,7 @@ fun HandyColumnCard(
     border: BorderStroke? = null,
     color: Color = MaterialTheme.colorScheme.primary,
     contentColor: Color = contentColorFor(color),
+    shadowElevation: Dp = 0.dp,
     @FloatRange(from = 0.0) topContentWeight: Float = 1f,
     topContent: (@Composable BoxScope.() -> Unit)? = null,
     @FloatRange(from = 0.0) centerContentWeight: Float = 0f,
@@ -38,6 +39,7 @@ fun HandyColumnCard(
         border = border,
         color = color,
         contentColor = contentColor,
+        shadowElevation = shadowElevation,
         contentAlignment = Alignment.Center
     ) {
         Column {

@@ -20,6 +20,7 @@ fun HandyRowCard(
     border: BorderStroke? = null,
     color: Color = MaterialTheme.colorScheme.primary,
     contentColor: Color = contentColorFor(color),
+    shadowElevation: Dp = 0.dp,
     @FloatRange(from = 0.0) startContentWeight: Float = 2f,
     startContent: (@Composable BoxScope.() -> Unit)? = null,
     @FloatRange(from = 0.0) centerContentWeight: Float = 5f,
@@ -34,6 +35,7 @@ fun HandyRowCard(
         border = border,
         color = color,
         contentColor = contentColor,
+        shadowElevation = shadowElevation,
         contentAlignment = Alignment.Center,
     ) {
         Row {

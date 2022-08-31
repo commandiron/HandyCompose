@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -26,6 +27,7 @@ fun HandyCard(
     border: BorderStroke? = null,
     color: Color = MaterialTheme.colorScheme.primary,
     contentColor: Color = contentColorFor(color),
+    shadowElevation: Dp = 0.dp,
     contentAlignment: Alignment = Alignment.Center,
     content: @Composable BoxScope.() -> Unit
 ) {
@@ -45,7 +47,7 @@ fun HandyCard(
         shape = RoundedCornerShape(shapeSize),
         color = color,
         contentColor = contentColor,
-        shadowElevation = 4.dp,
+        shadowElevation = shadowElevation,
         border = border
     ){
         BoxWithConstraints(

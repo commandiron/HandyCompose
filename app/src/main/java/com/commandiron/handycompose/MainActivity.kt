@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ){}
-                when (0) {
+                when (4) {
                     //CORE
                     0 -> {
                         Column {
@@ -130,7 +130,7 @@ class MainActivity : ComponentActivity() {
                                 ){
                                     items(12){
                                         HandyGridCard(
-                                            modifier = Modifier.aspectRatio(1f),
+                                            modifier = Modifier.aspectRatio(1f).clickable {  },
                                             imageContent = {
                                                 AsyncImage(
                                                     model = ImageRequest.Builder(LocalContext.current)

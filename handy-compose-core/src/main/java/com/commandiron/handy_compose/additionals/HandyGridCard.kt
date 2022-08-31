@@ -31,6 +31,7 @@ fun HandyGridCard(
     HandyColumnCard(
         modifier = modifier,
         color = color,
+        shadowElevation = 4.dp,
         paddingFraction = 0f,
         topContent= {
             HandyCard(

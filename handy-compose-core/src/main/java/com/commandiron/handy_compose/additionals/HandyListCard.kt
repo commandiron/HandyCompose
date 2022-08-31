@@ -32,6 +32,7 @@ fun HandyListCard(
     HandyRowCard(
         modifier = modifier,
         color = color,
+        shadowElevation = 4.dp,
         startContent = {
             HandyCard(
                 modifier = Modifier.fillMaxSize(),
